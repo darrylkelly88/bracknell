@@ -1,2 +1,3 @@
 - hosts: all
-    - vmware_bracknell
+  roles:
+      - vmware_bracknell
