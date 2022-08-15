@@ -11,8 +11,8 @@
     cap_unit: "{{cap_unit}}"
     state: "present"
     description: "Description"
-    performance_policy: "{{ pp }}"
-    protection_policy: "{{ pp_name }}"
+    # performance_policy: "{{ pp }}"
+    # protection_policy: "{{ pp_name }}"
 
 - name: Map volume to a host without HLU
   dellemc.powerstore.volume:
