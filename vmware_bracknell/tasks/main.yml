@@ -15,7 +15,7 @@
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
-    datacenter_name: "{{ datacenter_name }}"
+    datacenter: "{{ vcenter_datacenter }}"
     name: "{{ vcenter_datastore }}"
     validate_certs: No
   delegate_to: localhost
