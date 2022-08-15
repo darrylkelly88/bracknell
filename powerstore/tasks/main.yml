@@ -23,4 +23,4 @@
     vol_name: "{{vol_name}}"
     state: "present"
     mapping_state: "mapped"
-    host: "host2"
+    host: "{{ target_host }}"
