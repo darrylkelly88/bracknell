@@ -1,0 +1,10 @@
+---
+# tasks file for vmware_bracknell
+- name: Gather cluster info from given datacenter
+  community.vmware.vmware_cluster_info:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter: "{{ vcenter_datacenter }}"
+  delegate_to: localhost
+  register: cluster_info
