@@ -6,6 +6,7 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     datacenter: "{{ vcenter_datacenter }}"
+    verifycert: false
   delegate_to: localhost
   register: cluster_info
 
@@ -16,6 +17,7 @@
     password: "{{ vcenter_password }}"
     datacenter_name: "{{ datacenter_name }}"
     name: "{{ vcenter_datastore }}"
+    verifycert: false
   delegate_to: localhost
   register: info
 
