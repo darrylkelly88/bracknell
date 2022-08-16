@@ -5,3 +5,13 @@ vm_mem_limit: 4096
 vm_mem_reserved: 4096
 vm_cpu_limit: 4096
 vm_max_connections: 5
+vcenter_hostname: ""
+vcenter_username: ""
+vcenter_password: ""
+vm_name: ""
+vm_template: ""
+vcenter_datastore: ""
+vm_mem: 4096
+vm_cpus: 2
+vm_cores: 2
+vm_network: ""
