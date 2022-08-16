@@ -2,9 +2,9 @@
 # tasks file for vm_build_bracknell
 - name: Remove "{{ vm_name }}"
   community.vmware.vmware_guest:
-    hostname: "{{ vcenter_server }}"
-    username: "{{ vcenter_user }}"
-    password: "{{ vcenter_pass }}"
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
     validate_certs: no
     name: "{{ vm_name }}"
     state: absent
