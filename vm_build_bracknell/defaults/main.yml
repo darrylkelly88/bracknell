@@ -12,7 +12,7 @@ vm_name: ""
 vm_template: ""
 vcenter_datastore: ""
 vm_mem: 4096
-vm_cpus: 2
+vm_cpus: 1
 vm_cores: 2
 vm_network: ""
 validate_certs: No
