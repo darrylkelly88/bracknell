@@ -1,4 +1,15 @@
 ---
+- name: Set the state of a virtual machine to poweroff
+  community.vmware.vmware_guest_powerstate:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    folder: "{{ vcenter_datacenter }}/{{ vm_folder }}"
+    name: "{{ vm_name }}"
+    state: powered-off
+  delegate_to: localhost
+  register: deploy
+
 # tasks file for vm_build_bracknell
 - name: Remove "{{ vm_name }}"
   community.vmware.vmware_guest:
