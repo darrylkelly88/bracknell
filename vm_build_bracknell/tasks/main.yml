@@ -10,7 +10,7 @@
     state: poweredon
     template: "{{ vm_template }}"
     disk:
-      - size_gb: 30
+      - size_gb: "{{ vm_disk_size }}"
         type: thin
         datastore: "{{ vcenter_datastore }}"
     hardware:
