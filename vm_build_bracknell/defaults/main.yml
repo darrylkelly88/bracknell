@@ -16,4 +16,4 @@ vm_cpus: 2
 vm_cores: 2
 vm_network: ""
 validate_certs: No
-vm_folder: "vm\ansible"
+vm_folder: "vm/ansible"
