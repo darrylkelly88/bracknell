@@ -41,6 +41,7 @@
       - name: "{{ vm_network }}"
         connected: yes
         start_connected: yes
+        state: "present"
 
     wait_for_ip_address: true
   delegate_to: localhost
