@@ -2,6 +2,7 @@
 # tasks file for vm_build_bracknell
 - name: Create a virtual machine from a template
   community.vmware.vmware_guest:
+    datacenter: "{{ vcenter_datacenter }}"
     validate_certs: "{{ validate_certs }}"
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
