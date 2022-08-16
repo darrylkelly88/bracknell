@@ -40,9 +40,9 @@
     networks:
       - name: "{{ vm_network }}"
         connected: yes
-        start_connected: yes
         state: "present"
 
+    start_connected: yes
     wait_for_ip_address: true
   delegate_to: localhost
   register: deploy
