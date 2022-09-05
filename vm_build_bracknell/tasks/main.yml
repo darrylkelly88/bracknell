@@ -57,10 +57,10 @@
     name: "{{ vm_name }}"
     network_name: "{{ vm_network }}"
     networks:
-      label: "Network adapter 1"
-      connected: yes
-      state: "present"
-      start_connected: yes
+      - label: "Network adapter 1"
+        connected: yes
+        state: "present"
+        start_connected: yes
 
     gather_network_info: yes
     connected: yes
