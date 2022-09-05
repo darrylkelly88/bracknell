@@ -39,9 +39,10 @@
     #       iso_path: "[datastore1] livecd.iso"
     networks:
       - name: "{{ vm_network }}"
-        connected: yes
-        state: "present"
-        start_connected: yes
+        type: "dhcp"
+        # connected: yes
+        # start_connected: yes
+
     wait_for_ip_address: true
   delegate_to: localhost
   register: deploy
