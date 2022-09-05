@@ -46,3 +46,13 @@
     wait_for_ip_address: true
   delegate_to: localhost
   register: deploy
+
+- name: "Forcibly attach the network adapter to the VM"
+  community.vmware.vmware_guest_network:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datacenter: "{{ vcenter_datacenter }}"
+    name: "{{ vm_name }}"
+    network_name: "{{ vm_network }}"
+    state: present
