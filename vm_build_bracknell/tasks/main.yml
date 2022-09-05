@@ -49,6 +49,7 @@
 
 - name: "Forcibly attach the network adapter to the VM"
   community.vmware.vmware_guest_network:
+    validate_certs: "{{ validate_certs }}"
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
