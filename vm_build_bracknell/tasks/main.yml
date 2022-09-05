@@ -39,7 +39,13 @@
     #       iso_path: "[datastore1] livecd.iso"
     networks:
       - name: "{{ vm_network }}"
-        type: "dhcp"
+        ip: 10.250.20.65
+        netmask: 255.255.255.0
+        gateway: 10.250.20.254
+        device_type: vmxnet3
+        wait_for_ip_address: true
+        wait_for_ip_address_timeout: 600
+        type: "static"
         # connected: yes
         # start_connected: yes
 
