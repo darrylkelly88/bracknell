@@ -8,7 +8,6 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     folder: "{{ vcenter_datacenter }}/{{ vm_folder }}"
-    gather_network_info: yes
     name: "{{ vm_name }}"
     state: poweredon
     template: "{{ vm_template }}"
@@ -57,4 +56,5 @@
     datacenter: "{{ vcenter_datacenter }}"
     name: "{{ vm_name }}"
     network_name: "{{ vm_network }}"
+    gather_network_info: yes
     state: present
