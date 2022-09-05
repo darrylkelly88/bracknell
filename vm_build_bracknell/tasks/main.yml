@@ -46,8 +46,8 @@
         wait_for_ip_address: true
         wait_for_ip_address_timeout: 600
         type: "static"
-        # connected: yes
-        # start_connected: yes
+        connected: yes
+        start_connected: yes
 
     wait_for_ip_address: true
   delegate_to: localhost
