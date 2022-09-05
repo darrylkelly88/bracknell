@@ -56,6 +56,7 @@
     datacenter: "{{ vcenter_datacenter }}"
     name: "{{ vm_name }}"
     network_name: "{{ vm_network }}"
+    force: yes
     networks:
       - label: "Network adapter 1"
         connected: yes
