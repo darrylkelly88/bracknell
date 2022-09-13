@@ -9,7 +9,7 @@
     password: "{{ vcenter_password }}"
     folder: "{{ vcenter_datacenter }}/{{ vm_folder }}"
     name: "{{ vm_name }}"
-    state: poweredon
+    state: "poweredon"
     template: "{{ vm_template }}"
     disk:
       - size_gb: "{{ vm_disk_size }}"

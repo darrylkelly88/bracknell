@@ -1,6 +1,6 @@
 ---
 # defaults file for vm_build_bracknell
-vm_disk_size: 51
+vm_disk_size: 101
 vm_mem_limit: 4096
 vm_mem_reserved: 4096
 vm_cpu_limit: 4096
