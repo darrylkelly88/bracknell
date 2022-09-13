@@ -43,32 +43,6 @@
         netmask: 255.255.255.0
         gateway: 10.250.20.254
         device_type: vmxnet3
-        wait_for_ip_address: true
-        wait_for_ip_address_timeout: 600
-        type: "static"
-        connected: yes
-        start_connected: yes
     wait_for_ip_address: true
   delegate_to: localhost
   register: deploy
-
-- name: "Forcibly attach the network adapter to the VM"
-  community.vmware.vmware_guest_network:
-    validate_certs: "{{ validate_certs }}"
-    hostname: "{{ vcenter_hostname }}"
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
-    datacenter: "{{ vcenter_datacenter }}"
-    name: "{{ vm_name }}"
-    network_name: "{{ vm_network }}"
-    force: yes
-    networks:
-      - label: "Network adapter 1"
-        connected: yes
-        state: "present"
-        start_connected: yes
-
-    gather_network_info: yes
-    connected: yes
-    start_connected: false
-    state: present
