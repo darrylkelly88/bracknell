@@ -17,10 +17,10 @@
     service: http
     permanent: yes
     state: enabled
-    notify: restart firewalld
+  notify: restart firewalld
 - name: copy html template
   template:
     src: index.html.j2
     dest: /var/www/html/index.hmtl
-    notify: restart httpd
+  notify: restart httpd
 
