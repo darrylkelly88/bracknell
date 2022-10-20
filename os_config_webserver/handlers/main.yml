@@ -1,0 +1,13 @@
+---
+# handlers file for os_config_webserver
+#
+#
+- name: restart firewalld
+  service:
+    name: firewalld
+    state: restarted
+- name: restart httpd
+  service:
+    name: httpd
+    state: restarted
+

@@ -1,0 +1,6 @@
+---
+- name: create and configure webserver
+  hosts: all
+  become: yes
+  roles:
+    - os_config_webserver
