@@ -15,7 +15,7 @@
 - name: configure firewalld
   ansible.posix.firewalld:
     service: http
-    permenent: yes
+    permanent: yes
     state: enabled
     notify: restart firewalld
 - name: copy html template
