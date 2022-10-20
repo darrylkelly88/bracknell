@@ -42,6 +42,7 @@
         ip: 10.250.20.65
         netmask: 255.255.255.0
         gateway: 10.250.20.254
+        type: static
     #   #   device_type: vmxnet3
     wait_for_ip_address: true
   delegate_to: localhost
