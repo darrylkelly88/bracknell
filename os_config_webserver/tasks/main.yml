@@ -2,6 +2,10 @@
 # tasks file for os_config_webserver
 #
 #
+- name: configure DNS
+  copy:
+    content: "nameserver 10.250.210.1"
+    dest: /etc/resolv.conf
 - name: install required packages
   yum:
     name:
