@@ -25,13 +25,13 @@
 # performance_policy: "{{ pp }}"
 # protection_policy: "{{ pp_name }}"
 
-# - name: Map volume to a host without HLU
-#   dellemc.powerstore.volume:
-#     array_ip: "{{array_ip}}"
-#     verifycert: "{{verifycert}}"
-#     user: "{{username}}"
-#     password: "{{password}}"
-#     vol_name: "{{vol_name}}"
-#     state: "present"
-#     mapping_state: "mapped"
-#     host: "{{ target_host }}"
+ - name: Map volume to a host without HLU
+   dellemc.powerstore.volume:
+     array_ip: "{{array_ip}}"
+     verifycert: "{{verifycert}}"
+     user: "{{username}}"
+     password: "{{password}}"
+     vol_name: "{{vol_name}}"
+     state: "present"
+     mapping_state: "mapped"
+     host_group: "{{ host_group_name }}"
