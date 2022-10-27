@@ -22,7 +22,7 @@
     datastore_type: "VMFS"
     vmfs_device_name: "ansible_testvol"
     vmfs_version: 6
-    esxi_hostname:
+    esxi_hostname: "esx-1.vxrail.tdpc.local"
     state: present
   delegate_to: localhost
 
