@@ -1,0 +1,6 @@
+---
+- name: scan for new volumes
+  hosts: all
+  become: yes
+  roles:
+    - scan_volumes
