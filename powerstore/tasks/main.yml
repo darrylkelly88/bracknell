@@ -34,4 +34,4 @@
     vol_name: "{{vol_name}}"
     state: "present"
     mapping_state: "mapped"
-    host_group: "{{ host_group_name }}"
+    hostgroup: "{{ host_group_name }}"
