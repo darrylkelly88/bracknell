@@ -10,6 +10,7 @@
     password: "{{ vcenter_password }}"
     cluster_name: "{{ clustername }}"
     refresh_storage: true
+    validate_certs: false
   delegate_to: localhost
 
 
@@ -24,6 +25,7 @@
     vmfs_version: 6
     esxi_hostname: "esx-1.vxrail.tdpc.local"
     state: present
+    validate_certs: false
   delegate_to: localhost
 
 
