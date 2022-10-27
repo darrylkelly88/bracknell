@@ -8,6 +8,23 @@
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
+    cluster_name: "{{ clustername }}"
     refresh_storage: true
   delegate_to: localhost
+
+
+- name: create new datastore
+  community.vmware.vmware_host_datastore:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    datastore_name: "{{ vcenter_datastore }}"
+    datastore_type: "VMFS"
+    vmfs_device_name: "ansible_testvol"
+    vmfs_version: 6
+    esxi_hostname:
+    state: present
+  delegate_to: localhost
+
+
 
