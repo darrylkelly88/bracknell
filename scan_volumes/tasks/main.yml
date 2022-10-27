@@ -1,0 +1,13 @@
+---
+# tasks file for scan_volumes
+#
+#
+
+- name: Refresh storage
+  community.vmware.vmware_host_scanhba:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    refresh_storage: true
+  delegate_to: localhost
+
