@@ -1,0 +1,5 @@
+---
+- name: gather powerstore data
+  hosts: all
+  roles:
+    - powerstore_data_gather

@@ -1,0 +1,23 @@
+---
+# tasks file for powerstore_data_gather
+#
+#
+- name: Get list of volumes, volume groups, hosts, host groups and node, and list of protection policies and snapshot rules, and list of nas server nfs_export and smb shares
+  dellemc.powerstore.info:
+    array_ip: "{{array_ip}}"
+    verifycert: "{{verifycert}}"
+    user: "{{user}}"
+    password: "{{password}}"
+    gather_subset:
+      - vol
+      - vg
+      - host
+      - hg
+      - node
+      - protection_policy
+      - snapshot_rule
+      - nas_server
+      - nfs_export
+      - smb_share
+  register: subset_result
+
