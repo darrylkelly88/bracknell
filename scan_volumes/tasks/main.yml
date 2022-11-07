@@ -10,6 +10,7 @@
     password: "{{ vcenter_password }}"
     cluster_name: "{{ clustername }}"
     refresh_storage: true
+    validate_certs: false
   delegate_to: localhost
 
 
@@ -19,11 +20,12 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     datastore_name: "{{ vcenter_datastore }}"
-    datastore_type: "VMFS"
+    datastore_type: "vmfs"
     vmfs_device_name: "ansible_testvol"
     vmfs_version: 6
-    esxi_hostname:
+    esxi_hostname: "esx-1.vxrail.tdpc.local"
     state: present
+    validate_certs: false
   delegate_to: localhost
 
 
