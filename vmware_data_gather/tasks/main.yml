@@ -1,0 +1,13 @@
+---
+# tasks file for vmware_data_gather
+#
+#
+- name: Gather vmware host facts from vCenter
+  community.vmware.vmware_host_facts:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    esxi_hostname: "{{ esxi_hostname }}"
+  register: host_facts
+  delegate_to: localhost
+
