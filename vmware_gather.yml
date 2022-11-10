@@ -1,0 +1,6 @@
+---
+- name: gather facts from vmware
+  hosts: all
+  become: yes
+  roles:
+    - vmware_data_gather
