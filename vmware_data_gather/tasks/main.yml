@@ -8,6 +8,7 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     esxi_hostname: "{{ esxi_hostname }}"
+    validate_certs: "{{ validate_certs }}"
   register: host_facts
   delegate_to: localhost
 
