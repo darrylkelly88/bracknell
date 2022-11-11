@@ -20,7 +20,7 @@
   notify: restart firewalld
 - name: copy website files / dependencies from git
   get_url:
-    src: https://github.com/darrylkelly88/bracknell/tree/main/dell_demo_website
+    url: https://github.com/darrylkelly88/bracknell/tree/main/dell_demo_website
     dest: /var/www/html/
 - name: copy html template
   template:
