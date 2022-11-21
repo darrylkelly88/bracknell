@@ -1,7 +1,7 @@
 ---
 # tasks file for powerstore
 
-- name: Map volume to a host without HLU
+- name: remove volume mapping to a host without HLU
   dellemc.powerstore.volume:
     array_ip: "{{array_ip}}"
     verifycert: "{{verifycert}}"
@@ -12,7 +12,7 @@
     mapping_state: "unmapped"
     hostgroup: "{{ host_group_name }}"
 
-- name: Create stand-alone volume
+- name: remove stand-alone volume
   dellemc.powerstore.volume:
     array_ip: "{{array_ip}}"
     verifycert: "{{verifycert}}"
