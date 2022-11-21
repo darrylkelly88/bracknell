@@ -1,0 +1,6 @@
+---
+- name: remove volumes and mapping
+  hosts: all
+  become: yes
+  roles:
+    - powerstore_remove
