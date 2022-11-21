@@ -1,7 +1,19 @@
 ---
 # tasks file for scan_volumes
-#
-#
+
+- name: Gather info about vmhbas of an ESXi Host before refresh
+  community.vmware.vmware_host_disk_info:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    esxi_hostname: "{{ esxi_host }}"
+  delegate_to: localhost
+  register: storage_devices_before
+
+- set_fact:
+    disk_list_before: "{{ storage_devices_before | json_query(jmesquery) }}"
+  vars:
+    jmesquery: 'hosts_disk_info."{{ esxi_host }}"[*].canonical_name'
 
 - name: Refresh storage
   community.vmware.vmware_host_scanhba:
@@ -13,21 +25,33 @@
     validate_certs: false
   delegate_to: localhost
 
+- name: Gather info about vmhbas of an ESXi Host after refresh
+  community.vmware.vmware_host_disk_info:
+    hostname: "{{ vcenter_hostname }}"
+    username: "{{ vcenter_username }}"
+    password: "{{ vcenter_password }}"
+    esxi_hostname: "{{ esxi_host }}"
+  delegate_to: localhost
+  register: storage_devices_after
+
+- set_fact:
+    disk_list_after: "{{ storage_devices_after | json_query(jmesquery) }}"
+  vars:
+    jmesquery: 'hosts_disk_info."{{ esxi_host }}"[*].canonical_name'
+
+- set_fact:
+    new_disk: "{{ disk_list_after | difference(disk_list_before) }}"
 
 - name: create new datastore
   community.vmware.vmware_host_datastore:
     hostname: "{{ vcenter_hostname }}"
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
-    datacenter_name: "{{ vcenter_datacenter }}"
-    datastore_name: "{{ vcenter_datastore }}"
+    datastore_name: "new_datastore"
     datastore_type: "vmfs"
-    vmfs_device_name: "test_ansible"
+    vmfs_device_name: "{{ new_disk }}"
     vmfs_version: 6
-    esxi_hostname: "esx-1.vxrail.tdpc.local"
+    esxi_hostname: "{{ esxi_host }}"
     state: present
     validate_certs: false
   delegate_to: localhost
-
-
-
