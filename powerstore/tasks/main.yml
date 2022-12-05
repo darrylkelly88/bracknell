@@ -37,6 +37,8 @@
     mapping_state: "mapped"
     hostgroup: "{{ host_group_name }}"
 
+- set_fact:
+    wwn: disk_id['volume_details']['wwn']
 - name: debug disk_id
   debug:
-    var: disk_id['volume_details']['wwn']
+    var: wwn
