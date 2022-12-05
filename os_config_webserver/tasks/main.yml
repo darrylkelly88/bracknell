@@ -27,7 +27,7 @@
     repo: https://github.com/darrylkelly88/bracknell.git
     dest: /root/dell-project
 
-- name: copy website assets
+- name: copy website assets to /var/www/html
   copy:
     src: /root/dell-project/dell_demo_website/assets/
     dest: /var/www/html/assets
