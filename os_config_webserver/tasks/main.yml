@@ -29,8 +29,9 @@
 
 - name: copy website assets
   copy:
-    src: /root/dell-project/dell_demo_website/assets
+    src: /root/dell-project/dell_demo_website/assets/
     dest: /var/www/html/assets
+    remote_src: yes
 
 - name: copy html template
   template:
