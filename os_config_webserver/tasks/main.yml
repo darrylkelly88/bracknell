@@ -19,7 +19,7 @@
     state: enabled
   notify: restart firewalld
 - name: copy website files / dependencies from git
-  git:
+  ansible.builtin.git:
     repo: https://github.com/darrylkelly88/bracknell.git
     dest: /root/
 - name: copy html template
