@@ -39,4 +39,4 @@
 
 - name: debug disk_id
   debug:
-    var: disk_id[volume_details]
+    var: disk_id
