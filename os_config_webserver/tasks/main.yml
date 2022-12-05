@@ -6,6 +6,7 @@
   copy:
     content: "nameserver 10.250.210.1"
     dest: /etc/resolv.conf
+
 - name: install required packages
   yum:
     name:
@@ -13,16 +14,24 @@
       - firewalld
       - git-all
     state: present
+
 - name: configure firewalld
   ansible.posix.firewalld:
     service: http
     permanent: yes
     state: enabled
   notify: restart firewalld
-- name: copy website files / dependencies from git
+
+- name: clone git repo
   ansible.builtin.git:
     repo: https://github.com/darrylkelly88/bracknell.git
     dest: /root/dell-project
+
+- name: copy website assets
+  copy:
+    src: /root/dell-project/dell_demo_website/assets
+    dest: /var/www/html/assets
+
 - name: copy html template
   template:
     src: index.html.j2
