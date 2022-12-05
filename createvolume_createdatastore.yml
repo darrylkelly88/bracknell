@@ -1,0 +1,6 @@
+---
+- name: use roles to create a new volume, map to VMware & use it to create a new datastore
+  hosts: all
+  roles:
+    - powerstore
+    - scan_volumes
