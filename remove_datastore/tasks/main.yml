@@ -6,7 +6,7 @@
     username: "{{ vcenter_username }}"
     password: "{{ vcenter_password }}"
     datastore_name: "new_datastore"
-#    esxi_hostname: "{{ esxi_host }}"
+    esxi_hostname: "{{ esxi_host }}"
     state: absent
     validate_certs: false
   delegate_to: localhost
