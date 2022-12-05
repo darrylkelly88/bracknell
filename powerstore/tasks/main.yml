@@ -11,6 +11,7 @@
     size: 1
     cap_unit: "{{cap_unit}}"
     state: "present"
+  register: disk_id
 # - name: Create stand-alone volume with performance and protection policy
 #   dellemc.powerstore.volume:
 #     array_ip: "{{array_ip}}"
@@ -35,3 +36,7 @@
     state: "present"
     mapping_state: "mapped"
     hostgroup: "{{ host_group_name }}"
+
+- name: debug disk_id
+  debug:
+    var: disk_id
