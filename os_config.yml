@@ -1,8 +1,13 @@
 ---
-- name: create and configure webserver
-  hosts: all
+- name: gather facts for webserver
+  hosts: localhost
   become: yes
   roles:
     - vmware_data_gather
     - powerstore_data_gather
+
+- name: configure webserver
+  hosts: all
+  become: yes
+  roles:
     - os_config_webserver
