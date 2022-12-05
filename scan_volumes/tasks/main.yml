@@ -51,7 +51,7 @@
     password: "{{ vcenter_password }}"
     datastore_name: "new_datastore"
     datastore_type: "vmfs"
-    vmfs_device_name: "{{ new_disk }}"
+    vmfs_device_name: "{{ wwn }}"
     vmfs_version: 6
     esxi_hostname: "{{ esxi_host }}"
     state: present

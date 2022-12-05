@@ -39,6 +39,7 @@
 
 - set_fact:
     wwn: "{{disk_id['volume_details']['wwn']}}"
+    cacheable: yes
 - name: debug disk_id
   debug:
     var: wwn
