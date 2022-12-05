@@ -38,7 +38,7 @@
     hostgroup: "{{ host_group_name }}"
 
 - set_fact:
-    wwn: disk_id['volume_details']['wwn']
+    wwn: "{{disk_id['volume_details']['wwn']}}"
 - name: debug disk_id
   debug:
     var: wwn
