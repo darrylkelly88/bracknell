@@ -1,20 +1,20 @@
 ---
 # tasks file for scan_volumes
 
-- name: Gather info about vmhbas of an ESXi Host before refresh
-  community.vmware.vmware_host_disk_info:
-    hostname: "{{ vcenter_hostname }}"
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
-    esxi_hostname: "{{ esxi_host }}"
-    validate_certs: false
-  delegate_to: localhost
-  register: storage_devices_before
+#- name: Gather info about vmhbas of an ESXi Host before refresh
+#  community.vmware.vmware_host_disk_info:
+#    hostname: "{{ vcenter_hostname }}"
+#    username: "{{ vcenter_username }}"
+#    password: "{{ vcenter_password }}"
+#    esxi_hostname: "{{ esxi_host }}"
+#    validate_certs: false
+#  delegate_to: localhost
+#  register: storage_devices_before
 
-- set_fact:
-    disk_list_before: "{{ storage_devices_before | json_query(jmesquery) }}"
-  vars:
-    jmesquery: 'hosts_disk_info."{{ esxi_host }}"[*].canonical_name'
+#- set_fact:
+#    disk_list_before: "{{ storage_devices_before | json_query(jmesquery) }}"
+#  vars:
+#    jmesquery: 'hosts_disk_info."{{ esxi_host }}"[*].canonical_name'
 
 - name: Refresh storage
   community.vmware.vmware_host_scanhba:
@@ -26,23 +26,23 @@
     validate_certs: false
   delegate_to: localhost
 
-- name: Gather info about vmhbas of an ESXi Host after refresh
-  community.vmware.vmware_host_disk_info:
-    hostname: "{{ vcenter_hostname }}"
-    username: "{{ vcenter_username }}"
-    password: "{{ vcenter_password }}"
-    esxi_hostname: "{{ esxi_host }}"
-    validate_certs: false
-  delegate_to: localhost
-  register: storage_devices_after
+#- name: Gather info about vmhbas of an ESXi Host after refresh
+#  community.vmware.vmware_host_disk_info:
+#    hostname: "{{ vcenter_hostname }}"
+#    username: "{{ vcenter_username }}"
+#    password: "{{ vcenter_password }}"
+#    esxi_hostname: "{{ esxi_host }}"
+#    validate_certs: false
+#  delegate_to: localhost
+#  register: storage_devices_after
 
-- set_fact:
-    disk_list_after: "{{ storage_devices_after | json_query(jmesquery) }}"
-  vars:
-    jmesquery: 'hosts_disk_info."{{ esxi_host }}"[*].canonical_name'
+#- set_fact:
+#    disk_list_after: "{{ storage_devices_after | json_query(jmesquery) }}"
+#  vars:
+#    jmesquery: 'hosts_disk_info."{{ esxi_host }}"[*].canonical_name'
 
-- set_fact:
-    new_disk: "{{ disk_list_after | difference(disk_list_before) }}"
+#- set_fact:
+#    new_disk: "{{ disk_list_after | difference(disk_list_before) }}"
 
 - name: create new datastore
   community.vmware.vmware_host_datastore:

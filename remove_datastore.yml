@@ -1,0 +1,6 @@
+---
+- name: remove a datastore
+  hosts: all
+  become: yes
+  roles:
+    - remove_datastore
