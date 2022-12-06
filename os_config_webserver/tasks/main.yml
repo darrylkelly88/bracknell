@@ -39,3 +39,8 @@
     dest: /var/www/html/index.html
   notify: restart httpd
 
+- name: debug - copy j2 template
+  template:
+    src: test_template.html.j2
+    dest: /var/www/html/test.html
+  notify: restart httpd
