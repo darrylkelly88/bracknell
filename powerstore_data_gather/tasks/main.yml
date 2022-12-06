@@ -25,4 +25,5 @@
     powerstore_facts: subset_result
     cacheable: yes
 
-
+- debug:
+    var: powerstore_facts
