@@ -19,10 +19,10 @@
       - nas_server
       - nfs_export
       - smb_share
-  register: "{{subset_result}}"
+  register: subset_result
 
 - set_fact:
-    powerstore_facts: subset_result
+    powerstore_facts: "{{subset_result}}"
     cacheable: yes
 
 - debug:
