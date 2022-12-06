@@ -39,6 +39,9 @@
     dest: /var/www/html/index.html
   notify: restart httpd
 
+- debug:
+    var: powerstore_facts
+
 - name: debug - copy j2 template
   template:
     src: test_template.html.j2
