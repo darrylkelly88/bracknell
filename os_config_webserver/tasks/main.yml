@@ -40,7 +40,7 @@
   notify: restart httpd
 
 - debug:
-    var: hostvars['localhost']['powerstore_facts']
+    var: hostvars['localhost']['powerstore_facts']['ProtectionPolicies']
 
 - name: debug - copy j2 template
   template:
