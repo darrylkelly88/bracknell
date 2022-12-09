@@ -32,11 +32,16 @@
     src: /root/dell-project/dell_demo_website/assets/
     dest: /var/www/html/assets
     remote_src: yes
+    group: "apache"
+    owner: "apache"
+    setype: httpd_sys_content_t
 
 - name: copy html template
   template:
     src: index.html.j2
     dest: /var/www/html/index.html
+    group: "apache"
+    owner: "apache"
   notify: restart httpd
 
 - debug:
