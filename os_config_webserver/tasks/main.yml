@@ -43,6 +43,9 @@
     setype: httpd_sys_content_t
     state: present
 
+- name: apply new security context
+  command: restorecon
+
 - name: copy html template
   template:
     src: index.html.j2
