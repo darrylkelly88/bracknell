@@ -39,7 +39,7 @@
 
 - name: modify security context to allow loading of website assets
   sefcontext:
-    target: '/var/www/html(/.*)?'
+    target: '/var/www/html/assets(/.*)?'
     setype: httpd_sys_content_t
     state: present
 
