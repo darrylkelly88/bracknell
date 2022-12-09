@@ -40,7 +40,7 @@
   command: semanage fcontext -a -t httpd_sys_content_t "/var/www/html/assets(/.*)?"
 
 - name: apply new security context
-  command: restorecon -R -ivf /var/www/html/assets/
+  command: restorecon -R -ivf /var/www/html/
 
 - name: copy html template
   template:
