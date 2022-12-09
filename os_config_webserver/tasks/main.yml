@@ -44,7 +44,7 @@
     state: present
 
 - name: apply new security context
-  command: restorecon
+  command: restorecon -R -ivf /var/www/html/assets/
 
 - name: copy html template
   template:
