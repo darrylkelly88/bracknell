@@ -34,7 +34,6 @@
     remote_src: yes
     group: "apache"
     owner: "apache"
-    setype: httpd_sys_content_t
     directory_mode: yes
 
 - name: modify security context to allow loading of website assets
