@@ -35,6 +35,7 @@
     group: "apache"
     owner: "apache"
     setype: httpd_sys_content_t
+    directory_mode: yes
 
 - name: copy html template
   template:
