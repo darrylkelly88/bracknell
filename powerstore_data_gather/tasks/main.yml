@@ -21,9 +21,11 @@
       - smb_share
   register: subset_result
 
-- set_fact:
-    powerstore_facts: "{{subset_result}}"
-    cacheable: yes
+- name: record results for recall in later playbook
+    ansible.builtin.set_stats:
+      data:
+        powerstore_facts: "{{subset_result}}"
+      per_host: no
 
 - debug:
     var: powerstore_facts
