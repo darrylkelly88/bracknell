@@ -22,10 +22,10 @@
   register: subset_result
 
 - name: record results for recall in later playbook
-    ansible.builtin.set_stats:
-      data:
-        powerstore_facts: "{{subset_result}}"
-      per_host: no
+  ansible.builtin.set_stats:
+    data:
+      powerstore_facts: "{{subset_result}}"
+    per_host: no
 
 - debug:
     var: powerstore_facts
