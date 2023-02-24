@@ -35,12 +35,7 @@
     group: "apache"
     owner: "apache"
     directory_mode: yes
-
-- name: modify security context to allow loading of website assets
-  command: semanage fcontext -a -t httpd_sys_content_t "/var/www/html/assets(/.*)?"
-
-- name: apply new security context
-  command: restorecon -R /var/www/html/
+  notify: set security context
 
 - name: copy html template
   template:
