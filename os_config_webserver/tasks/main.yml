@@ -45,11 +45,11 @@
     owner: "apache"
   notify: restart httpd
 
-- debug:
-    var: hostvars['localhost']['powerstore_facts']['ProtectionPolicies']
-
-- name: debug - copy j2 template
-  template:
-    src: test_template.html.j2
-    dest: /var/www/html/test.html
-  notify: restart httpd
+#- debug:
+#    var: hostvars['localhost']['powerstore_facts']['ProtectionPolicies']
+#
+#- name: debug - copy j2 template
+#  template:
+#    src: test_template.html.j2
+#    dest: /var/www/html/test.html
+#  notify: restart httpd
