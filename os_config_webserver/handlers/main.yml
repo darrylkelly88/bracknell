@@ -3,7 +3,10 @@
 #
 #
 - name: set security context
-  command: semanage fcontext -a -t httpd_sys_content_t "/var/www/html/assets(/.*)?" && restorecon -R /var/www/html/
+  command: semanage fcontext -a -t httpd_sys_content_t "/var/www/html/assets(/.*)?"
+  notify: ensure security permenance
+- name: ensure security permenance
+  command: restorecon -R /var/www/html/
 - name: restart firewalld
   service:
     name: firewalld
