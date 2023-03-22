@@ -1,2 +1,7 @@
 ---
 # defaults file for os_config_webserver
+name: "BSC Guest"
+phone_name: "Darryl Kelly"
+phone_number: "07824 384 365"
+email_name: "Darryl Kelly"
+email_address: "darryl.kelly@tdsynnex.com"
