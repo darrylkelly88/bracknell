@@ -35,7 +35,8 @@
     group: "apache"
     owner: "apache"
     directory_mode: yes
-  notify: set security context
+    setype: httpd_sys_content_t
+ # notify: set security context
 
 - name: copy html template
   template:
