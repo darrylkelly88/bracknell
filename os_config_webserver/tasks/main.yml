@@ -44,6 +44,7 @@
     dest: /var/www/html/index.html
     group: "apache"
     owner: "apache"
+    setype: httpd_sys_content_t
   notify: restart httpd
 
 #- debug:
