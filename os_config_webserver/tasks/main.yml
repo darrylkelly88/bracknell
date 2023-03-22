@@ -38,6 +38,13 @@
     setype: httpd_sys_content_t
  # notify: set security context
 
+- name: set security context
+  community.general.sefcontext:
+    target: '/var/www/html(/.*)?'
+    setype: httpd_sys_content_t
+    state: present
+  notify: ensure security permenance
+
 - name: copy html template
   template:
     src: index.html.j2
