@@ -1,0 +1,5 @@
+---
+- name: control projectors power
+  hosts: localhost
+  roles:
+    - projectors_power
