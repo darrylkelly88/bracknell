@@ -1,0 +1,5 @@
+---
+- name: change nginx host
+  hosts: all
+  roles:
+    - nginx_config
