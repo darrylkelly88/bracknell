@@ -1,5 +1,6 @@
 ---
 - name: change nginx host
   hosts: all
+  become: yes
   roles:
     - nginx_config
