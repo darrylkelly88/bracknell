@@ -1,0 +1,6 @@
+---
+# tasks file for nginx_config
+- name: change template for demo.redhat.tdbsc.co.uk
+  template:
+    src: demo.redhat.tdbsc.co.uk.j2
+    dest: /etc/nginx/conf.d/demo.redhat.tdbsc.co.uk.conf
