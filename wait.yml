@@ -1,0 +1,7 @@
+---
+- name: wait
+  hosts: localhost
+  tasks:
+    - name: wait for {{minutes}} minutes
+      ansible.builtin.pause:
+        minutes: {{minutes}}
