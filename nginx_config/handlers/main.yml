@@ -1,2 +1,6 @@
 ---
 # handlers file for nginx_config
+- name: restart nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted

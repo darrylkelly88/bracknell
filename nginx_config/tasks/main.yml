@@ -4,3 +4,4 @@
   template:
     src: demo.redhat.tdbsc.co.uk.conf.j2
     dest: /etc/nginx/conf.d/demo.redhat.tdbsc.co.uk.conf
+  notify: restart nginx
