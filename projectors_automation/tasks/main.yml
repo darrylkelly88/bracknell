@@ -1,0 +1,9 @@
+---
+# tasks file for projectors_automation
+- name: Change projector image
+  ansible.builtin.uri:
+    url: "http://10.250.247.186/api/v01/contentmgr/playlist/play/{{playlist_id}}/"
+    method: POST
+#    body: "{{ lookup('ansible.builtin.file','issue.json') }}"
+    status_code: 200
+#    body_format: json

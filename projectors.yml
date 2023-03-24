@@ -1,0 +1,5 @@
+---
+- name: projectors
+  hosts: localhost
+  roles:
+    - projectors_automation

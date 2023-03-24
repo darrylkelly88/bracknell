@@ -35,7 +35,15 @@
     group: "apache"
     owner: "apache"
     directory_mode: yes
-  notify: set security context
+    setype: httpd_sys_content_t
+ # notify: set security context
+
+- name: set security context
+  community.general.sefcontext:
+    target: '/var/www/html(/.*)?'
+    setype: httpd_sys_content_t
+    state: present
+  notify: ensure security permenance
 
 - name: copy html template
   template:
@@ -43,6 +51,7 @@
     dest: /var/www/html/index.html
     group: "apache"
     owner: "apache"
+    setype: httpd_sys_content_t
   notify: restart httpd
 
 #- debug:
