@@ -1,10 +1,10 @@
 ---
-- name: gather facts for webserver
-  hosts: localhost
-  become: yes
-  roles:
-    - vmware_data_gather
-    - powerstore_data_gather
+#- name: gather facts for webserver
+#  hosts: localhost
+#  become: yes
+#  roles:
+#    - vmware_data_gather
+#    - powerstore_data_gather
 
 - name: configure webserver
   hosts: all
