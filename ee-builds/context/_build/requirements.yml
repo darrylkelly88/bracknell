@@ -1,4 +1,6 @@
 ---
 collections:
-  - name: dellemc.powerstore
-  - name: community.general
+  - dellemc.powerstore
+  - community.general
+  - community.vmware
+  - ansible.posix
