@@ -1,2 +1,2 @@
 ansible-core==2.12
-PyPowerStore==1.9.0
+PyPowerStore==1.10.0

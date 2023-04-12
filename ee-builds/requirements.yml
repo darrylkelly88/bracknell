@@ -3,4 +3,3 @@ collections:
   - dellemc.powerstore
   - community.general
   - community.vmware
-  - ansible.posix
