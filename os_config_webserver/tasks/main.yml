@@ -24,12 +24,12 @@
 
 - name: clone git repo
   ansible.builtin.git:
-    repo: https://github.com/darrylkelly88/bracknell.git
-    dest: /root/dell-project
+    repo: https://github.com/darrylkelly88/alexaweb.git
+    dest: /root/alexa-demo
 
 - name: copy website assets to /var/www/html
   copy:
-    src: /root/dell-project/dell_demo_website/assets/
+    src: /root/alexa-demo/alexa_demo_web/assets/
     dest: /var/www/html/assets
     remote_src: yes
     group: "apache"

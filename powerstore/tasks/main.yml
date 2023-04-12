@@ -10,6 +10,7 @@
     vol_name: "{{vol_name}}"
     size: 1
     cap_unit: "{{cap_unit}}"
+#    app_type: "Business_Applications_Other"
     state: "present"
   register: disk_id
 # - name: Create stand-alone volume with performance and protection policy
