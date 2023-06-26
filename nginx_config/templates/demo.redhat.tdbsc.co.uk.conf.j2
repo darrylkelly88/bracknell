@@ -11,8 +11,6 @@ server {
 		proxy_set_header X-Real-IP $remote_addr;
 		proxy_set_header X-forwarded-Proto https;
 		proxy_set_header Host $host;
-      		proxy_set_header Cache-Control "max-age=0, no-cache, no-store, must-revalidate";
-    		proxy_set_header Pragma "no-cache";
 #		proxy_redirect off;
 #		proxy_ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
 #		proxy_ssl_server_name on;
