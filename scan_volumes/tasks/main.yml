@@ -16,6 +16,7 @@
 #  vars:
 #    jmesquery: 'hosts_disk_info."{{ esxi_host }}"[*].canonical_name'
 
+
 - name: Refresh storage
   community.vmware.vmware_host_scanhba:
     hostname: "{{ vcenter_hostname }}"
@@ -43,6 +44,10 @@
 
 #- set_fact:
 #    new_disk: "{{ disk_list_after | difference(disk_list_before) }}"
+
+- name: Wait for 10 seconds to allow storage to refresh then continue with play
+  ansible.builtin.wait_for:
+    timeout: 10
 
 - name: create new datastore
   community.vmware.vmware_host_datastore:
