@@ -2,7 +2,7 @@
 # tasks file for projectors_power
 - name: Change projector power status
   ansible.builtin.uri:
-    url: "http://10.250.247.186/api/v01/contentmgr/remote/power/{{power_status}}/"
+    url: "http://projector-dellhub.tdpc.local/api/v01/contentmgr/remote/power/{{power_status}}/"
     method: POST
     #    body: "{{ lookup('ansible.builtin.file','issue.json') }}"
     status_code: 200
