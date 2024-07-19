@@ -26,7 +26,7 @@
     refresh_storage: true
     validate_certs: false
     rescan_hba: false
-    rescan_vmfs: true
+    rescan_vmfs: false
   delegate_to: localhost
 
 #- name: Gather info about vmhbas of an ESXi Host after refresh
