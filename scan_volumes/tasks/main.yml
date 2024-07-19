@@ -25,6 +25,7 @@
     cluster_name: "{{ clustername }}"
     refresh_storage: true
     validate_certs: false
+    rescan_hba: false
   delegate_to: localhost
 
 #- name: Gather info about vmhbas of an ESXi Host after refresh
